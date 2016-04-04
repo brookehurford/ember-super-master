@@ -9,14 +9,14 @@ export default Ember.Component.extend({
     save1() {
       console.log('save 1');
       var params = {
-        owner: this.get('owner'),
-        city: this.get('city'),
-        type: this.get('type'),
-        image: this.get('image'),
-        bedrooms: this.get('bedrooms'),
-        cost: this.get('cost')
+        owner: this.get('owner') ? this.get('owner') : "",
+        city: this.get('city') ? this.get('city') : "",
+        type: this.get('type') ? this.get('type') : "",
+        image: this.get('image') ? this.get('image') : "",
+        bedrooms: this.get('bedrooms') ? this.get('bedrooms') : "",
+        cost: this.get('cost') ? parseInt(this.get('cost')) : ""
       };
-
+      // debugger;
       this.set('addNewRental', false);
       this.sendAction('save2', params);
     }
